@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Font families */
+  --font-family-work-sans: var(--font-work-sans);
+  --font-family-plus-jakarta: var(--font-plus-jakarta);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,334 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-work-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom font utility classes */
+.font-work-sans {
+  font-family: var(--font-work-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-plus-jakarta {
+  font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-stagger > * {
+  animation: fade-in-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Enhanced shadow */
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+[role="button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   ENHANCED AUDIO VISUALIZER ANIMATIONS
+   Sleek, professional, and eye-catching
+   ============================================ */
+
+/* Smooth Sound Wave Bars - 5 bars for richer visualization */
+@keyframes sound-wave-1 {
+  0%,
+  100% {
+    height: 10px;
+    opacity: 0.7;
+  }
+  50% {
+    height: 24px;
+    opacity: 1;
+  }
+}
+
+@keyframes sound-wave-2 {
+  0%,
+  100% {
+    height: 16px;
+    opacity: 0.8;
+  }
+  50% {
+    height: 28px;
+    opacity: 1;
+  }
+}
+
+@keyframes sound-wave-3 {
+  0%,
+  100% {
+    height: 8px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes sound-wave-4 {
+  0%,
+  100% {
+    height: 14px;
+    opacity: 0.75;
+  }
+  50% {
+    height: 26px;
+    opacity: 1;
+  }
+}
+
+@keyframes sound-wave-5 {
+  0%,
+  100% {
+    height: 12px;
+    opacity: 0.7;
+  }
+  50% {
+    height: 22px;
+    opacity: 1;
+  }
+}
+
+.animate-sound-wave-1 {
+  animation: sound-wave-1 0.55s ease-in-out infinite;
+}
+
+.animate-sound-wave-2 {
+  animation: sound-wave-2 0.7s ease-in-out infinite;
+  animation-delay: 0.05s;
+}
+
+.animate-sound-wave-3 {
+  animation: sound-wave-3 0.6s ease-in-out infinite;
+  animation-delay: 0.15s;
+}
+
+.animate-sound-wave-4 {
+  animation: sound-wave-4 0.65s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.animate-sound-wave-5 {
+  animation: sound-wave-5 0.58s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+/* Corner Accent Pulse */
+@keyframes corner-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes corner-pulse-delayed {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-corner-pulse {
+  animation: corner-pulse 2s ease-in-out infinite;
+}
+
+.animate-corner-pulse-delayed {
+  animation: corner-pulse-delayed 2s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* Shimmer Effect for Progress Bar */
+@keyframes shimmer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Subtle Pulse for Time Display */
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 640px) {
+  @keyframes sound-wave-1 {
+    0%,
+    100% {
+      height: 14px;
+      opacity: 0.7;
+    }
+    50% {
+      height: 28px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes sound-wave-2 {
+    0%,
+    100% {
+      height: 20px;
+      opacity: 0.8;
+    }
+    50% {
+      height: 32px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes sound-wave-3 {
+    0%,
+    100% {
+      height: 12px;
+      opacity: 0.6;
+    }
+    50% {
+      height: 24px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes sound-wave-4 {
+    0%,
+    100% {
+      height: 18px;
+      opacity: 0.75;
+    }
+    50% {
+      height: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes sound-wave-5 {
+    0%,
+    100% {
+      height: 16px;
+      opacity: 0.7;
+    }
+    50% {
+      height: 26px;
+      opacity: 1;
+    }
+  }
 }

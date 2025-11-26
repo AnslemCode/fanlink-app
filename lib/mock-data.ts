@@ -1,0 +1,112 @@
+import { Release, ReleaseArtist, Track } from "@/types/release.types";
+
+export const mockArtistDetails: ReleaseArtist = {
+  name: "Rema",
+  role: "Primary Artist",
+  artistId: "artist-001",
+  picture: null,
+  bio: "Nigerian Afrobeats sensation",
+  artists_details: {
+    id: "artist-001",
+    displayName: "Rema",
+    wallet: "0x...",
+    gender: "Male",
+    telephone: null,
+    picture: null,
+    biography:
+      "Divine Ikubor, known professionally as Rema, is a Nigerian singer and rapper.",
+    releaseFeed: null,
+    artistFeed: null,
+    address: null,
+    state: null,
+    postCode: null,
+    country: "Nigeria",
+    appleMusic: "https://music.apple.com/artist/rema",
+    facebook: "https://facebook.com/heisrema",
+    soundCloud: null,
+    spotify: "https://open.spotify.com/artist/rema",
+    twitter: "https://twitter.com/heisrema",
+    website: null,
+    signedContract: true,
+    signature: null,
+    signedDate: null,
+    deleted: false,
+    createdAt: "2023-01-01T00:00:00Z",
+    updatedAt: "2024-01-01T00:00:00Z",
+    userId: "user-001",
+  },
+};
+
+export const mockRelease: Release = {
+  id: "release-001",
+  releaseTitle: "Fun",
+  businessId: "business-001",
+  releaseType: "SINGLE",
+  releaseDate: "2024-03-15",
+  coverArt: "/group-1000006204.png",
+  primaryGenre: "Afrobeats",
+  subGenre: "Afro-pop",
+  mood: "Upbeat",
+  upc: "123456789012",
+  status: "PUBLISHED",
+  fanLink: "rema-fun",
+  createdAt: "2024-03-01T00:00:00Z",
+  updatedAt: "2024-03-15T00:00:00Z",
+  artists: [mockArtistDetails],
+};
+
+export const mockTrack: Track = {
+  id: "track-001",
+  wav: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+  trackTitle: "Fun",
+  mixName: null,
+  trackNumber: "1",
+  length: "3:45",
+  sampleStartTime: "0:30",
+  sampleEndTime: "1:00",
+  genre: "Afrobeats",
+  trackPrice: null,
+  isrcCode: "NGABC2400001",
+  mixVersion: "Original Mix",
+  explicitContent: "No",
+  containsVocals: "Yes",
+  hasInstrumentals: "No",
+  language: "English",
+  publishedBy: "Jonzing World",
+  composedBy: "Divine Ikubor",
+  producer: "London",
+  lyricist: "Rema",
+  reMixer: "",
+  lyrics: "",
+  publishedLyrics: false,
+  deleted: false,
+  createdAt: "2024-03-01T00:00:00Z",
+  updatedAt: "2024-03-15T00:00:00Z",
+  releaseId: "release-001",
+  artists: [],
+};
+
+export const mockStreamingLinks = {
+  spotify: "https://open.spotify.com/track/your-track-id",
+  appleMusic: "https://music.apple.com/us/album/your-album-id",
+  youtubeMusic: "https://music.youtube.com/watch?v=your-video-id",
+  boomplay: "https://www.boomplay.com/songs/your-song-id",
+  tidal: "https://tidal.com/browse/track/your-track-id",
+  deezer: "https://www.deezer.com/track/your-track-id",
+  amazon: "https://music.amazon.com/albums/your-album-id",
+  resso: "https://m.resso.com/song/your-song-id",
+};
+
+export const mockSocialLinks = {
+  instagram: "https://instagram.com/heisrema",
+  twitter: "https://twitter.com/heisrema",
+  facebook: "https://facebook.com/heisrema",
+  youtube: "https://youtube.com/@heisrema",
+};
+
+export const mockFanlinkData = {
+  release: mockRelease,
+  track: mockTrack,
+  streamingLinks: mockStreamingLinks,
+  socialLinks: mockSocialLinks,
+};
