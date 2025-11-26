@@ -152,7 +152,7 @@ export const SongHeader: React.FC<SongHeaderProps> = ({
           sizes="(max-width: 640px) 95vw, 600px"
           className="object-cover transition-all duration-500"
           priority
-          quality={95}
+          // quality={95}
         />
 
         {/* Darkened overlay when playing */}
